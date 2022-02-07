@@ -23,14 +23,26 @@ const apiUrl = "https://random.imagecdn.app/600/400";
 // =====================
 
 //OPTION N2
-async function getRandomImg() {
-     const response = await fetch(apiUrl)
+// async function getRandomImg() {
+//      const response = await fetch(apiUrl)
 
+//      elImg.src = response.url;
+// }
+// getRandomImg()
 
-     elImg.src = response.url;
+// elBtn.addEventListener("click", function () {
+//      getRandomImg()
+// })
+
+//OPTION N3
+function getImgRandom(data) {
+     const response = fetch(apiUrl).then(res => res).then(data => getData(data));
 }
-getRandomImg()
+
+function getData(data) {
+     elImg.src = data.url;
+}
 
 elBtn.addEventListener("click", function () {
-     getRandomImg()
+     getImgRandom()
 })
