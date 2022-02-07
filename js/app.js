@@ -3,18 +3,34 @@ let elImg = document.querySelector(".cat-img");
 
 const apiUrl = "https://random.imagecdn.app/600/400";
 
+// ===================
 
-//OPTION 1
-const getImgApi = async function () {
-     const response = await fetch(apiUrl);
+//OPTION N1
+// const getImgApi = async function () {
+//      const response = await fetch(apiUrl);
+
+//      elImg.src = response.url;
+
+//      console.log(response);
+// }
+
+// getImgApi()
+
+// elBtn.addEventListener("click", function () {
+//      getImgApi()
+// })
+
+// =====================
+
+//OPTION N2
+async function getRandomImg() {
+     const response = await fetch(apiUrl)
+
 
      elImg.src = response.url;
-
-     console.log(response);
 }
-
-getImgApi()
+getRandomImg()
 
 elBtn.addEventListener("click", function () {
-     getImgApi()
+     getRandomImg()
 })
