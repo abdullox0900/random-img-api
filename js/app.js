@@ -34,6 +34,8 @@ const apiUrl = "https://random.imagecdn.app/600/400";
 //      getRandomImg()
 // })
 
+// =====================
+
 //OPTION N3
 function getImgRandom(data) {
      const response = fetch(apiUrl).then(res => res).then(data => getData(data));
